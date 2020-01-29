@@ -11,7 +11,7 @@ handlers:
 - url: /
   static_dir: build
 skip_files:
-- app/
+- src/
 - node_modules/
 - ^\.git/.*
 - ^(.*/)?#.*#$
