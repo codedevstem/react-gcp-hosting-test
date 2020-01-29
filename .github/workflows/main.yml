@@ -13,6 +13,7 @@ jobs:
         node-version: 12.x
     - run: yarn install
     - run: yarn build
+    - run: ls -al
       env:
         CI: true
 
@@ -21,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - run: ls -al
     - uses: actions/checkout@v1
     - uses: 
     - uses: actions-hub/gcloud@master
