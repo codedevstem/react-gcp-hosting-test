@@ -7,12 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
     - run: yarn install
     - run: yarn build
+    - run: ls -al
       env:
         CI: true
 
@@ -22,7 +23,6 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v1
-      - uses: 
       - uses: actions-hub/gcloud@master
         env:
           PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
